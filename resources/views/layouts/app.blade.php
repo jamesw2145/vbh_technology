@@ -18,6 +18,24 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        .btn-inspect {
+            display: flex;
+            align-items: center;
+        }
+        .btn-part-complete {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn-inspect .btn, .btn-part-complete .btn{
+            height: 37px;
+            border-radius: 18.5px;
+        }
+        .btn-next-measurement {
+            bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
