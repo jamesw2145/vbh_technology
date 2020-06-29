@@ -28,6 +28,9 @@ class Kernel extends ConsoleKernel
 
         // Monitor scripts.
         Commands\Monitor\CheckTick::class,
+
+        //Create or Update user password with username
+        Commands\CreateOrUpdateSuperUser::class,
     ];
 
     /**
