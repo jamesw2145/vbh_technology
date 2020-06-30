@@ -28,7 +28,7 @@
             justify-content: center;
             align-items: center;
         }
-        .btn-inspect .btn, .btn-part-complete .btn{
+        .btn-inspect .btn, .btn-part-complete .btn, .btn-next-measurement{
             height: 37px;
             border-radius: 18.5px;
         }
