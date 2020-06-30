@@ -71,9 +71,9 @@
                             <div class="form-group">
                                 <label for="measure_type">Measurement Type</label>
                                 <select class="form-control" id="measure_type" name="measure_type">
+                                    <option>CUT-LENGTH</option>
                                     <option>OAL</option>
-                                    <option>Cut Length</option>
-                                    <option>Other</option>
+                                    <option>OTHER</option>
                                 </select>
                             </div>
                         </div>
@@ -81,16 +81,16 @@
                             <div class="form-group">
                                 <label for="measure_uom">Units</label>
                                 <select class="form-control" id="measure_uom" name="measure_uom">
-                                    <option>inches</option>
-                                    <option>mm</option>
-                                    <option>feet</option>
+                                    <option>FEET</option>
+                                    <option>INCHES</option>
+                                    <option>MM</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="hose_date_code">Date Code</label>
-                                <input type="number" class="form-control" id="hose_date_code" name="hose_date_code" value="0">
+                                <input type="number" class="form-control" id="hose_date_code" name="hose_date_code" placeholder="0">
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="fitting_1_crimp_od">Crimp OD #1</label>
-                                <input type="number" class="form-control" id="fitting_1_crimp_od" name="fitting_1_crimp_od" value="0.0000">
+                                <input type="number" class="form-control" id="fitting_1_crimp_od" name="fitting_1_crimp_od" placeholder="0.0000">
                             </div>
                             <div class="form-group">
                                 <label for="fitting_1_crimp_length">Crimp Length #1</label>
@@ -126,7 +126,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="fitting_2_crimp_od">Crimp OD #2</label>
-                                <input type="number" class="form-control" id="fitting_2_crimp_od" name="fitting_2_crimp_od" value="0.0000">
+                                <input type="number" class="form-control" id="fitting_2_crimp_od" name="fitting_2_crimp_od" placeholder="0.0000">
                             </div>
                             <div class="form-group">
                                 <label for="fitting_2_crimp_length">Crimp Length #2</label>
@@ -136,85 +136,41 @@
                         <div class="col-md-4 form-row align-items-center">
                             <div class="form-group">
                                 <label for="hose_measured_len">Measured Length</label>
-                                <input type="number" class="form-control" id="hose_measured_len" name="hose_measured_len" value="0.0000">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card mb-3">
-                <div class="card-header">Inspection</div>
-
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-4 border-right">
-                            <div class="form-group">
-                                <label for="fitting_1_item_id">Fitting #1</label>
-                                <input class="form-control" id="fitting_1_item_id" name="fitting_1_item_id">
-                            </div>
-                            <div class="form-group">
-                                <label for="fitting_1_crimp_od">Crimp OD #1</label>
-                                <input type="number" class="form-control" id="fitting_1_crimp_od" name="fitting_1_crimp_od" value="0.0000">
-                            </div>
-                            <div class="form-group">
-                                <label for="fitting_1_crimp_length">Crimp Length #1</label>
-                                <input class="form-control" id="fitting_1_crimp_length" name="fitting_1_crimp_length">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="fitting_2_item_id">Fitting #2</label>
-                                <input class="form-control" id="fitting_2_item_id" name="fitting_2_item_id">
-                            </div>
-                            <div class="form-group">
-                                <label for="fitting_2_crimp_od">Crimp OD #2</label>
-                                <input type="number" class="form-control" id="fitting_2_crimp_od" name="fitting_2_crimp_od" value="0.0000">
-                            </div>
-                            <div class="form-group">
-                                <label for="fitting_2_crimp_length">Crimp Length #2</label>
-                                <input class="form-control" id="fitting_2_crimp_length" name="fitting_2_crimp_length">
-                            </div>
-                        </div>
-                        <div class="col-md-4 form-row align-items-center">
-                            <div class="form-group">
-                                <label for="hose_measured_len">Measured Length</label>
-                                <input type="number" class="form-control" id="hose_measured_len" name="hose_measured_len" value="0.0000">
+                                <input type="number" class="form-control" id="hose_measured_len" name="hose_measured_len" placeholder="0.0000">
                             </div>
                             <div class="btn btn-light border-dark position-absolute btn-next-measurement">Next Measurement</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3 pb-3">
-            <div class="card h-100">
-                <div class="card-header">Conversions</div>
-
-                <div class="card-body px-5 py-3">
-                    <p>1/16 = .0625</p>
-                    <p>1/8 = .125</p>
-                    <p>3/16 = .1875</p>
-                    <p>1/4 = .25</p>
-                    <p>5/16 = .3125</p>
-                    <p>3/8 = .375</p>
-                    <p>7/16 = .4375</p>
-                    <p>1/2 = .5</p>
-                    <p>9/16 = .5625</p>
-                    <p>5/8 = .625</p>
-                    <p>11/16 = .6875</p>
-                    <p>3/4 = .75</p>
-                    <p>13/16 = .8125</p>
-                    <p>7/8 = .875</p>
-                    <p>15/16 = .9375</p>
-                </div>
+            <div class="btn-part-complete">
+                <div class="btn btn-primary" data-toggle="modal" data-target="#additionalFields">Part Complete</div>
             </div>
         </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-md-9 btn-part-complete">
-            <div class="btn btn-primary" data-toggle="modal" data-target="#additionalFields">Part Complete</div>
-        </div>
-        <div class="col-md-3">
+        <div class="col-md-3 pb-3">
+            <div id="accordion" class="mb-3">
+                <div class="card h-100">
+                    <div class="card-header btn btn-link text-left" data-toggle="collapse" data-target="#conversionCardBody" aria-expanded="true" aria-controls="conversionCardBody">Conversions</div>
+
+                    <div class="card-body px-5 py-3 collapse show" id="conversionCardBody">
+                        <p>1/16 = .0625</p>
+                        <p>1/8 = .125</p>
+                        <p>3/16 = .1875</p>
+                        <p>1/4 = .25</p>
+                        <p>5/16 = .3125</p>
+                        <p>3/8 = .375</p>
+                        <p>7/16 = .4375</p>
+                        <p>1/2 = .5</p>
+                        <p>9/16 = .5625</p>
+                        <p>5/8 = .625</p>
+                        <p>11/16 = .6875</p>
+                        <p>3/4 = .75</p>
+                        <p>13/16 = .8125</p>
+                        <p>7/8 = .875</p>
+                        <p>15/16 = .9375</p>
+                    </div>
+                </div>
+            </div>
             <div class="form-group">
                 <label for="note">Comment</label>
                 <input class="form-control" id="note" name="note">
