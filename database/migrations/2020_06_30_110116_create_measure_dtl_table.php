@@ -32,6 +32,8 @@ class CreateMeasureDtlTable extends Migration
             $table->decimal('fitting_2_crimp_od', 18, 6)->nullable();
             $table->decimal('fitting_2_crimp_len', 18, 6)->nullable();
 
+            $table->decimal('offset', 18, 3)->nullable();
+
             $table->dateTime('date_created')->nullable();
             $table->string('created_by', 20);
             $table->char('edit_flag', 1)->nullable();
