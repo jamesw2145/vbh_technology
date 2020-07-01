@@ -71,6 +71,7 @@
                             <div class="form-group">
                                 <label for="measure_type">Measurement Type</label>
                                 <select class="form-control" id="measure_type" name="measure_type">
+                                    <option>Select</option>
                                     <option>CUT-LENGTH</option>
                                     <option>OAL</option>
                                     <option>OTHER</option>
@@ -81,6 +82,7 @@
                             <div class="form-group">
                                 <label for="measure_uom">Units</label>
                                 <select class="form-control" id="measure_uom" name="measure_uom">
+                                    <option>Select</option>
                                     <option>FEET</option>
                                     <option>INCHES</option>
                                     <option>MM</option>
@@ -198,4 +200,13 @@
         </div>
     </div>
 </div>
+@endsection
+
+
+@section('scripts')
+<script>
+    $(document).ready(function(){
+        $('#production_date').datepicker('setUTCDate', new Date());
+    });
+</script>
 @endsection
