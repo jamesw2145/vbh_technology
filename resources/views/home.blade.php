@@ -201,7 +201,7 @@
             <div class="col-md-3 pb-3">
                 <div id="accordion" class="mb-3">
                     <div class="card h-100">
-                        <div class="card-header btn btn-link text-left" data-toggle="collapse" data-target="#conversionCardBody" aria-expanded="true" aria-controls="conversionCardBody">Conversions</div>
+                        <div class="card-header btn btn-link" data-toggle="collapse" data-target="#conversionCardBody" aria-expanded="true" aria-controls="conversionCardBody">Conversions</div>
 
                         <div class="card-body px-5 py-3 collapse show" id="conversionCardBody">
                             <p>1/16 = .0625</p>

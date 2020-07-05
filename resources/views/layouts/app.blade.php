@@ -37,6 +37,18 @@
             font-weight: bold;
             text-align: center;
         }
+        .form-group{
+            text-align: center;
+        }
+
+        .form-group input {
+            text-align: center;
+        }
+        .form-group select {
+            text-align: center;
+            text-align-last: center;
+            -moz-text-align-last: center;
+        }
     </style>
 </head>
 <body>
