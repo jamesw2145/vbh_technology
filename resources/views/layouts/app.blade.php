@@ -33,6 +33,10 @@
         .btn-next-measurement {
             bottom: 1rem;
         }
+        .card-header {
+            font-weight: bold;
+            text-align: center;
+        }
     </style>
 </head>
 <body>

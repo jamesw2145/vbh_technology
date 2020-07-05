@@ -8,6 +8,8 @@
         </div>
     </div>
     <form method="post" id="mainForm">
+        @csrf
+        <input type="hidden" name="entry_id" id="entry_id">
         <div class="row mb-3">
             <div class="col-md-10">
                 <div class="card">
@@ -31,7 +33,7 @@
                                 <div class="form-group">
                                     <label for="technician">Technician</label>
                                     <select class="form-control" id="technician" name="technician" required>
-                                        <option>Select</option>
+                                        <option value="">Select</option>
                                         <option>A. Chappelow</option>
                                         <option>N. Chappelow</option>
                                         <option>L. Collins</option>
@@ -77,22 +79,20 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="measure_type">Measurement Type</label>
-                                    <select class="form-control" id="measure_type" name="measure_type" required>
-                                        <option>Select</option>
-                                        <option>CUT-LENGTH</option>
+                                    <select class="form-control" id="measure_type" name="measure_type">
                                         <option>OAL</option>
-                                        <option>OTHER</option>
+                                        <option>Cut Length</option>
+                                        <option>Other</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="measure_uom">Units</label>
-                                    <select class="form-control" id="measure_uom" name="measure_uom" required>
-                                        <option>Select</option>
-                                        <option>FEET</option>
-                                        <option>INCHES</option>
-                                        <option>MM</option>
+                                    <select class="form-control" id="measure_uom" name="measure_uom">
+                                        <option>inches</option>
+                                        <option>mm</option>
+                                        <option>feet</option>
                                     </select>
                                 </div>
                             </div>
@@ -124,8 +124,8 @@
                                     <input type="number" class="form-control" id="fitting_1_crimp_od_1" name="inspection[0][fitting_1_crimp_od]" placeholder="0.0000">
                                 </div>
                                 <div class="form-group">
-                                    <label for="fitting_1_crimp_length_1">Crimp Length #1</label>
-                                    <input class="form-control" id="fitting_1_crimp_length_1" name="inspection[0][fitting_1_crimp_length]">
+                                    <label for="fitting_1_crimp_len_1">Crimp Length #1</label>
+                                    <input class="form-control" id="fitting_1_crimp_len_1" name="inspection[0][fitting_1_crimp_len]">
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -138,8 +138,8 @@
                                     <input type="number" class="form-control" id="fitting_2_crimp_od_1" name="inspection[0][fitting_2_crimp_od]" placeholder="0.0000">
                                 </div>
                                 <div class="form-group">
-                                    <label for="fitting_2_crimp_length_1">Crimp Length #2</label>
-                                    <input class="form-control" id="fitting_2_crimp_length_1" name="inspection[0][fitting_2_crimp_length]">
+                                    <label for="fitting_2_crimp_len_1">Crimp Length #2</label>
+                                    <input class="form-control" id="fitting_2_crimp_len_1" name="inspection[0][fitting_2_crimp_len]">
                                 </div>
                             </div>
                             <div class="col-md-4 form-row align-items-center">
@@ -166,8 +166,8 @@
                                     <input type="number" class="form-control" id="fitting_1_crimp_od_2" name="inspection[1][fitting_1_crimp_od]" placeholder="0.0000">
                                 </div>
                                 <div class="form-group">
-                                    <label for="fitting_1_crimp_length_2">Crimp Length #1</label>
-                                    <input class="form-control" id="fitting_1_crimp_length_2" name="inspection[1][fitting_1_crimp_length]">
+                                    <label for="fitting_1_crimp_len_2">Crimp Length #1</label>
+                                    <input class="form-control" id="fitting_1_crimp_len_2" name="inspection[1][fitting_1_crimp_len]">
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -180,8 +180,8 @@
                                     <input type="number" class="form-control" id="fitting_2_crimp_od_2" name="inspection[1][fitting_2_crimp_od]" placeholder="0.0000">
                                 </div>
                                 <div class="form-group">
-                                    <label for="fitting_2_crimp_length_2">Crimp Length #2</label>
-                                    <input class="form-control" id="fitting_2_crimp_length_2" name="inspection[1][fitting_2_crimp_length]">
+                                    <label for="fitting_2_crimp_len_2">Crimp Length #2</label>
+                                    <input class="form-control" id="fitting_2_crimp_len_2" name="inspection[1][fitting_2_crimp_len]">
                                 </div>
                             </div>
                             <div class="col-md-4 form-row align-items-center">
@@ -223,8 +223,8 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="note">Comment</label>
-                    <input class="form-control" id="note" name="note">
+                    <label for="comment">Comment</label>
+                    <input class="form-control" id="comment" name="comment">
                 </div>
             </div>
         </div>
@@ -256,7 +256,24 @@
 @section('scripts')
 <script>
     $(document).ready(function(){
-        $('#production_date').datepicker('setUTCDate', new Date());
+        $('#production_date').datepicker('setDate', new Date());
+
+        $('#mainForm').on('submit', function() {
+            event.preventDefault();
+
+            const formData =$(this).serialize();
+            $.ajax({
+                url: '/api/form-submit',
+                method: 'POST',
+                data: formData,
+                success: function(response) {
+                    console.log(response);
+                },
+                error: function(response) {
+                    console.log(response);
+                }
+            });
+        });
     });
 </script>
 @endsection
