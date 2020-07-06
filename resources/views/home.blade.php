@@ -201,9 +201,9 @@
             <div class="col-md-3 pb-3">
                 <div id="accordion" class="mb-3">
                     <div class="card h-100">
-                        <div class="card-header btn btn-link" data-toggle="collapse" data-target="#conversionCardBody" aria-expanded="true" aria-controls="conversionCardBody">Conversions</div>
+                        <div class="card-header btn-link" data-toggle="collapse" data-target="#conversionCardBody" aria-expanded="true" aria-controls="conversionCardBody">Conversions</div>
 
-                        <div class="card-body px-5 py-3 collapse show" id="conversionCardBody">
+                        <div class="card-body px-5 py-2 collapse show" id="conversionCardBody">
                             <p>1/16 = .0625</p>
                             <p>1/8 = .125</p>
                             <p>3/16 = .1875</p>

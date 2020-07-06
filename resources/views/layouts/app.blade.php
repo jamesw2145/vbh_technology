@@ -17,6 +17,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <style>
+        #mainForm {
+            font-size: 12px!important;
+        }
         .btn-inspect {
             display: flex;
             align-items: center;
@@ -36,25 +39,41 @@
         .card-header {
             font-weight: bold;
             text-align: center;
+            padding: 6px 0;
+            cursor: pointer;
+        }
+        .card-body {
+            padding: 6px 1.25rem;
         }
         .form-group{
             text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .form-group label{
+            margin-bottom: 0.3rem;
         }
 
         .form-group input {
             text-align: center;
+            height: 27px;
         }
         .form-group select {
             text-align: center;
             text-align-last: center;
             -moz-text-align-last: center;
+            height: 27px;
+            padding: 0;
+        }
+        #accordion .card-body p {
+            margin-bottom: 7px;
         }
     </style>
 </head>
 <body>
     <div id="app">
         @guest
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm mb-5">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
