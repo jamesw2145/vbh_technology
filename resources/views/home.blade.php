@@ -10,7 +10,7 @@
     <form method="post" id="mainForm">
         @csrf
         <input type="hidden" name="entry_id" id="entry_id">
-        <div class="row mb-3">
+        <div class="row mb-2">
             <div class="col-md-10">
                 <div class="card">
                     <div class="card-header">Product Information</div>
@@ -55,7 +55,7 @@
                 <button class="btn btn-light border-dark w-100">Inspect Similar Part</button>
             </div>
         </div>
-        <div class="row mb-3">
+        <div class="row mb-2">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Completed Assembly</div>
@@ -107,9 +107,9 @@
                 </div>
             </div>
         </div>
-        <div class="row mb-3">
+        <div class="row">
             <div class="col-md-9">
-                <div class="card mb-3">
+                <div class="card mb-2">
                     <div class="card-header">Inspection</div>
 
                     <div class="card-body">
@@ -151,7 +151,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card mb-3">
+                <div class="card mb-2">
                     <div class="card-header">Inspection</div>
 
                     <div class="card-body">
@@ -198,8 +198,8 @@
                     <button class="btn btn-primary" data-toggle="modal" data-target="#additionalFields">Part Complete</button>
                 </div>
             </div>
-            <div class="col-md-3 pb-3">
-                <div id="accordion" class="mb-3">
+            <div class="col-md-3">
+                <div id="accordion" class="mb-2">
                     <div class="card h-100">
                         <div class="card-header btn-link" data-toggle="collapse" data-target="#conversionCardBody" aria-expanded="true" aria-controls="conversionCardBody">Conversions</div>
 
