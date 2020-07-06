@@ -36,29 +36,29 @@
         .btn-next-measurement {
             bottom: 1rem;
         }
-        .card-header {
+        #mainForm .card-header {
             font-weight: bold;
             text-align: center;
             padding: 6px 0;
             cursor: pointer;
         }
-        .card-body {
+        #mainForm .card-body {
             padding: 6px 1.25rem;
         }
-        .form-group{
+        #mainForm .form-group{
             text-align: center;
             margin-bottom: 6px;
         }
 
-        .form-group label{
+        #mainForm .form-group label{
             margin-bottom: 0.3rem;
         }
 
-        .form-group input {
+        #mainForm .form-group input {
             text-align: center;
             height: 27px;
         }
-        .form-group select {
+        #mainForm .form-group select {
             text-align: center;
             text-align-last: center;
             -moz-text-align-last: center;
