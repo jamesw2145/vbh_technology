@@ -83,8 +83,8 @@ class HomeController extends Controller
                 $mesure_dtls = MeasureDTL::where('entry_id', $entry_id)->get();
 
                 foreach ($mesure_dtls as $key => $value) {
-                    $measure_dtl->qty_produced = $qty_produced;
-                    $measure_dtl->save();
+                    $value->qty_produced = $qty_produced;
+                    $value->save();
                 }
             }            
             
