@@ -35,11 +35,13 @@ class HomeController extends Controller
         $now = Carbon::now();
 
         $entry_id = $request->input('entry_id');
+        $action_type = $request->input('action_type');
 
         $doc_no = $request->input('doc_no');
         $technician = $request->input('technician');
 
-        $measurements = $request->only(['item_id', 'hose_item_id', 'measure_type', 'measure_uom', 'hose_date_code']);
+        $measurements = $request->only(['item_id', 'hose_item_id', 'measure_type', 'measure_uom', 'hose_date_code', 'qty_produced']);
+        $qty_produced = $request->input('qty_produced');
 
         $comment = $request->input('comment');
 
@@ -65,20 +67,50 @@ class HomeController extends Controller
                 ], $primary_fields)
             );
 
-            $inspection1 = MeasureDTL::create(
-                array_merge($measurements, $inspection1, $primary_fields)
-            );
-
-            $inspection2 = MeasureDTL::create(
-                array_merge($measurements, $inspection2, $primary_fields)
-            );
-
             MeasureComment::create(
                 array_merge(['comment' => $comment], $primary_fields)
             );
+        } else {
+            $measure_hdr = MeasureHDR::where('entry_id', $entry_id)->first();
+            $measure_hdr->update([
+                    'production_date' => $now,
+                    'doc_no' => $doc_no,
+                    'technician' => $technician,
+                ]
+            );
+
+            if($qty_produced) {
+                $mesure_dtls = MeasureDTL::where('entry_id', $entry_id)->get();
+
+                foreach ($mesure_dtls as $key => $value) {
+                    $measure_dtl->qty_produced = $qty_produced;
+                    $measure_dtl->save();
+                }
+            }            
+            
+
+            $measure_comment = MeasureComment::where('entry_id', $entry_id)->first();
+            $measure_comment->update(
+                ['comment' => $comment]
+            );
         }
 
+        $primary_fields = [
+            'entry_id' => $entry_id,
+            'date_created' => $now,
+            'created_by' => $technician,
+        ];
+
+        $inspection1 = MeasureDTL::create(
+            array_merge($measurements, $inspection1, $primary_fields)
+        );
+
+        $inspection2 = MeasureDTL::create(
+            array_merge($measurements, $inspection2, $primary_fields)
+        );
+
         return response()->json([
+            'action_type' => $action_type,
             'entry_id' => $entry_id,
             'inspection1' => $inspection1,
             'inspection2' => $inspection2,

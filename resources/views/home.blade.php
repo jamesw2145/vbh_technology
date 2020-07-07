@@ -10,6 +10,8 @@
     <form method="post" id="mainForm">
         @csrf
         <input type="hidden" name="entry_id" id="entry_id">
+        <input type="hidden" name="action_type" id="action_type">
+        <input type="hidden" name="qty_produced" id="qty_produced">
         <div class="row mb-2">
             <div class="col-md-10">
                 <div class="card">
@@ -52,7 +54,7 @@
                 </div>
             </div>
             <div class="col-md-2 btn-inspect">
-                <button class="btn btn-light border-dark w-100">Inspect Similar Part</button>
+                <button class="btn btn-light border-dark w-100" id="inspect_similar">Inspect Similar Part</button>
             </div>
         </div>
         <div class="row mb-2">
@@ -121,7 +123,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_1_crimp_od_1">Crimp OD #1</label>
-                                    <input type="number" class="form-control" id="fitting_1_crimp_od_1" name="inspection[0][fitting_1_crimp_od]" placeholder="0.0000">
+                                    <input type="number" class="form-control" id="fitting_1_crimp_od_1" name="inspection[0][fitting_1_crimp_od]" placeholder="0.0000" step="0.0001">
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_1_crimp_len_1">Crimp Length #1</label>
@@ -135,7 +137,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_2_crimp_od_1">Crimp OD #2</label>
-                                    <input type="number" class="form-control" id="fitting_2_crimp_od_1" name="inspection[0][fitting_2_crimp_od]" placeholder="0.0000">
+                                    <input type="number" class="form-control" id="fitting_2_crimp_od_1" name="inspection[0][fitting_2_crimp_od]" placeholder="0.0000" step="0.0001">
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_2_crimp_len_1">Crimp Length #2</label>
@@ -145,7 +147,7 @@
                             <div class="col-md-4 form-row align-items-center">
                                 <div class="form-group">
                                     <label for="hose_measured_len_1">Measured Length</label>
-                                    <input type="number" class="form-control" id="hose_measured_len_1" name="inspection[0][hose_measured_len]" placeholder="0.0000" required>
+                                    <input type="number" class="form-control" id="hose_measured_len_1" name="inspection[0][hose_measured_len]" placeholder="0.0000" step="0.0001" required>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +165,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_1_crimp_od_2">Crimp OD #1</label>
-                                    <input type="number" class="form-control" id="fitting_1_crimp_od_2" name="inspection[1][fitting_1_crimp_od]" placeholder="0.0000">
+                                    <input type="number" class="form-control" id="fitting_1_crimp_od_2" name="inspection[1][fitting_1_crimp_od]" placeholder="0.0000" step="0.0001">
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_1_crimp_len_2">Crimp Length #1</label>
@@ -177,7 +179,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_2_crimp_od_2">Crimp OD #2</label>
-                                    <input type="number" class="form-control" id="fitting_2_crimp_od_2" name="inspection[1][fitting_2_crimp_od]" placeholder="0.0000">
+                                    <input type="number" class="form-control" id="fitting_2_crimp_od_2" name="inspection[1][fitting_2_crimp_od]" placeholder="0.0000" step="0.0001">
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_2_crimp_len_2">Crimp Length #2</label>
@@ -187,15 +189,16 @@
                             <div class="col-md-4 form-row align-items-center">
                                 <div class="form-group">
                                     <label for="hose_measured_len_2">Measured Length</label>
-                                    <input type="number" class="form-control" id="hose_measured_len_2" name="inspection[1][hose_measured_len]" placeholder="0.0000" required>
+                                    <input type="number" class="form-control" id="hose_measured_len_2" name="inspection[1][hose_measured_len]" placeholder="0.0000" step="0.0001" required>
                                 </div>
-                                <button class="btn btn-light border-dark position-absolute btn-next-measurement">Next Measurement</button>
+                                <button class="btn btn-light border-dark position-absolute btn-next-measurement" id="next_measurement">Next Measurement</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="btn-part-complete">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#additionalFields">Part Complete</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#additionalFields" id="part_complete">Part Complete</button>
+                    <button class="d-none" id="hidden-btn">Part Complete</button>
                 </div>
             </div>
             <div class="col-md-3">
@@ -240,11 +243,11 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <input class="form-control" id="qty_produced" name="qty_produced">
+                    <input class="form-control" id="qty_produced_vi">
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                <button type="button" class="btn btn-primary" id="btn-qty-modal">Submit</button>
             </div>
             </div>
         </div>
@@ -256,7 +259,33 @@
 @section('scripts')
 <script>
     $(document).ready(function(){
+        $('#doc_no').focus();
+        
         $('#production_date').datepicker('setDate', new Date());
+
+        $('#inspect_similar').on('click', function(){
+            $('#action_type').val('inspect_similar');
+        });
+
+        $('#next_measurement').on('click', function(){
+            $('#action_type').val('next_measurement');
+        });
+
+        $('#part_complete').on('click', function(){
+            event.preventDefault();
+        });
+
+        $('#btn-qty-modal').on('click', function(){
+            $('#action_type').val('part_complete');
+            const qty_produced = $('#qty_produced_vi').val();
+            if(qty_produced) {
+                $('#qty_produced').val(qty_produced);
+                $('#additionalFields').modal('hide');
+                setTimeout(function(){ $('#hidden-btn').trigger('click'); }, 500);                
+            } else {
+                alert(' Qty Produced field is invalid!');
+            }
+        });
 
         $('#mainForm').on('submit', function() {
             event.preventDefault();
@@ -267,7 +296,59 @@
                 method: 'POST',
                 data: formData,
                 success: function(response) {
-                    console.log(response);
+                    $('#entry_id').val(response.entry_id);
+                    if(response.action_type == 'part_complete') {
+                        location.reload();
+                    }
+                    if(response.action_type == 'next_measurement') {
+                        const emFieldIds = [
+                            'fitting_1_crimp_od_1',
+                            'fitting_1_crimp_len_1',
+                            'fitting_1_crimp_od_2',
+                            'fitting_1_crimp_len_2',
+                            'hose_measured_len_1',
+                            'fitting_2_crimp_od_1',
+                            'fitting_2_crimp_len_1',
+                            'fitting_2_crimp_od_2',
+                            'fitting_2_crimp_len_2',
+                            'hose_measured_len_2',
+                        ];
+
+                        for (let index = 0; index < emFieldIds.length; index++) {
+                            const id = emFieldIds[index];
+                            $('#'+id).val('');
+                        }
+
+                        $('#fitting_1_crimp_od_1').focus();  
+                    }
+                    if(response.action_type == 'inspect_similar') {
+                        const emFieldIds = [
+                            'entry_id',
+                            'qty_produced',
+                            'qty_produced_vi',
+                            'comment',
+                            'fitting_1_crimp_od_1',
+                            'fitting_1_crimp_len_1',
+                            'fitting_1_crimp_od_2',
+                            'fitting_1_crimp_len_2',
+                            'hose_measured_len_1',
+                            'fitting_2_crimp_od_1',
+                            'fitting_2_crimp_len_1',
+                            'fitting_2_crimp_od_2',
+                            'fitting_2_crimp_len_2',
+                            'hose_measured_len_2',
+                        ];
+
+                        $('#measure_type').val('OAL');
+                        $('#measure_uom').val('inches');
+
+                        for (let index = 0; index < emFieldIds.length; index++) {
+                            const id = emFieldIds[index];
+                            $('#'+id).val('');
+                        }
+
+                        $('#doc_no').focus();
+                    }
                 },
                 error: function(response) {
                     console.log(response);

@@ -34,13 +34,14 @@
             border-radius: 18.5px;
         }
         .btn-next-measurement {
-            bottom: 1rem;
+            bottom: 0.5rem;
         }
         #mainForm .card-header {
             font-weight: bold;
             text-align: center;
-            padding: 6px 0;
+            padding: 4px 0;
             cursor: pointer;
+            font-size: 15px;
         }
         #mainForm .card-body {
             padding: 6px 1.25rem;
