@@ -69,10 +69,6 @@
         #accordion .card-body p {
             margin-bottom: 7px;
         }
-
-        .text-bold {
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>

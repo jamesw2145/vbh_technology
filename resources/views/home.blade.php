@@ -278,11 +278,10 @@
             if(!$(this).val())
                 $(this).val(inputValue);
             $(this).off('keydown');
-            $(this).removeClass('text-bold');
         });
 
         $('#mainForm input').on('focus', function() {
-            $(this).addClass('text-bold');
+            $(this).select();
             isFirstKey = true;
             $(this).on('keydown', function(){
                 if(isFirstKey){
