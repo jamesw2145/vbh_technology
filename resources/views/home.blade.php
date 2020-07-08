@@ -262,6 +262,7 @@
     $(document).ready(function(){
         $('#doc_no').focus();
 
+        var doc_no = '';
         $('#doc_no').on('focusout', function(){
             $hiddenProdDate = $('#hidden_prod_date').val();
             $doc_no = $('#doc_no').val();
@@ -269,6 +270,13 @@
                 $('#production_date').datepicker('setDate', new Date());
                 $('#hidden_prod_date').val((new Date()).toUTCString());
             }
+            if(!$doc_no)
+                $('#doc_no').val(doc_no);
+        });
+
+        $('#doc_no').on('focus', function() {
+            doc_no = $('#doc_no').val();
+            $('#doc_no').val('');
         });
 
         $('#inspect_similar').on('click', function(){
