@@ -190,7 +190,7 @@
                             <div class="col-md-4 form-row align-items-center">
                                 <div class="form-group">
                                     <label for="hose_measured_len_2">Measured Length</label>
-                                    <input type="number" class="form-control" id="hose_measured_len_2" name="inspection[1][hose_measured_len]" placeholder="0.0000" step="0.0001" required>
+                                    <input type="number" class="form-control" id="hose_measured_len_2" name="inspection[1][hose_measured_len]" placeholder="0.0000" step="0.0001">
                                 </div>
                                 <button class="btn btn-light border-dark position-absolute btn-next-measurement" id="next_measurement">Next Measurement</button>
                             </div>
@@ -352,7 +352,6 @@
                         $('#fitting_1_crimp_od_1').focus();
 
                         $('#hose_measured_len_1').removeAttr('required');
-                        $('#hose_measured_len_2').removeAttr('required');
                     }
                     if(response.action_type == 'inspect_similar') {
                         const emFieldIds = [
