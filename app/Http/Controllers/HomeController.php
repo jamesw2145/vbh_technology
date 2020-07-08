@@ -74,7 +74,6 @@ class HomeController extends Controller
         } else {
             $measure_hdr = MeasureHDR::where('entry_id', $entry_id)->first();
             $measure_hdr->update([
-                    'production_date' => $now,
                     'doc_no' => $doc_no,
                     'technician' => $technician,
                 ]
