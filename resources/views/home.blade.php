@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="col-md-2 btn-inspect">
-                <button class="btn btn-light border-dark w-100" id="inspect_similar">Inspect Similar Part</button>
+                <button class="btn btn-light border-dark w-100" id="inspect_similar" tabindex="-1">Inspect Similar Part</button>
             </div>
         </div>
         <div class="row mb-2">
@@ -101,7 +101,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="hose_date_code">Date Code</label>
-                                    <input type="number" class="form-control" id="hose_date_code" name="hose_date_code" placeholder="0" required>
+                                    <input class="form-control" id="hose_date_code" name="hose_date_code" required>
                                 </div>
                             </div>
                         </div>
@@ -127,7 +127,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_1_crimp_len_1">Crimp Length #1</label>
-                                    <input class="form-control" id="fitting_1_crimp_len_1" name="inspection[0][fitting_1_crimp_len]">
+                                    <input type="number" class="form-control" id="fitting_1_crimp_len_1" name="inspection[0][fitting_1_crimp_len]" step="0.0001" placeholder="0.0000">
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -141,7 +141,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_2_crimp_len_1">Crimp Length #2</label>
-                                    <input class="form-control" id="fitting_2_crimp_len_1" name="inspection[0][fitting_2_crimp_len]">
+                                    <input type="number" class="form-control" id="fitting_2_crimp_len_1" name="inspection[0][fitting_2_crimp_len]" step="0.0001" placeholder="0.0000">
                                 </div>
                             </div>
                             <div class="col-md-4 form-row align-items-center">
@@ -169,7 +169,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_1_crimp_len_2">Crimp Length #1</label>
-                                    <input class="form-control" id="fitting_1_crimp_len_2" name="inspection[1][fitting_1_crimp_len]">
+                                    <input type="number" class="form-control" id="fitting_1_crimp_len_2" name="inspection[1][fitting_1_crimp_len]" placeholder="0.0000" step="0.0001">
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -183,7 +183,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_2_crimp_len_2">Crimp Length #2</label>
-                                    <input class="form-control" id="fitting_2_crimp_len_2" name="inspection[1][fitting_2_crimp_len]">
+                                    <input type="number" class="form-control" id="fitting_2_crimp_len_2" name="inspection[1][fitting_2_crimp_len]" placeholder="0.0000" step="0.0001">
                                 </div>
                             </div>
                             <div class="col-md-4 form-row align-items-center">
@@ -260,7 +260,7 @@
 <script>
     $(document).ready(function(){
         $('#doc_no').focus();
-        
+
         $('#production_date').datepicker('setDate', new Date());
 
         $('#inspect_similar').on('click', function(){
