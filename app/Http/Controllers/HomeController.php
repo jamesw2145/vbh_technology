@@ -37,6 +37,7 @@ class HomeController extends Controller
         $entry_id = $request->input('entry_id');
         $action_type = $request->input('action_type');
 
+        $prod_date = $request->input('production_date');
         $doc_no = $request->input('doc_no');
         $technician = $request->input('technician');
 
@@ -61,7 +62,7 @@ class HomeController extends Controller
 
             MeasureHDR::create(
                 array_merge([
-                    'production_date' => $now,
+                    'production_date' => Carbon::parse($prod_date),
                     'doc_no' => $doc_no,
                     'technician' => $technician,
                 ], $primary_fields)

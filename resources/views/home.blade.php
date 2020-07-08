@@ -22,7 +22,8 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="production_date">Date</label>
-                                    <input class="form-control" id="production_date" name="production_date" disabled>
+                                    <input type="hidden" name="production_date" id="hidden_prod_date">
+                                    <input class="form-control" id="production_date" disabled>
                                 </div>
                             </div>
                             <div class="col-md-5">
@@ -261,7 +262,14 @@
     $(document).ready(function(){
         $('#doc_no').focus();
 
-        $('#production_date').datepicker('setDate', new Date());
+        $('#doc_no').on('focusout', function(){
+            $hiddenProdDate = $('#hidden_prod_date').val();
+            $doc_no = $('#doc_no').val();
+            if(!$hiddenProdDate && $doc_no) {
+                $('#production_date').datepicker('setDate', new Date());
+                $('#hidden_prod_date').val((new Date()).toUTCString());
+            }
+        });
 
         $('#inspect_similar').on('click', function(){
             $('#action_type').val('inspect_similar');
