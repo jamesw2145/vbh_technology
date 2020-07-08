@@ -244,7 +244,7 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <input class="form-control" id="qty_produced_vi">
+                    <input type="number" class="form-control" id="qty_produced_vi">
                 </div>
             </div>
             <div class="modal-footer">
@@ -349,7 +349,10 @@
                             $('#'+id).val('');
                         }
 
-                        $('#fitting_1_crimp_od_1').focus();  
+                        $('#fitting_1_crimp_od_1').focus();
+
+                        $('#hose_measured_len_1').removeAttr('required');
+                        $('#hose_measured_len_2').removeAttr('required');
                     }
                     if(response.action_type == 'inspect_similar') {
                         const emFieldIds = [

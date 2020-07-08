@@ -101,13 +101,17 @@ class HomeController extends Controller
             'created_by' => $technician,
         ];
 
-        $inspection1 = MeasureDTL::create(
-            array_merge($measurements, $inspection1, $primary_fields)
-        );
+        if($inspection1['hose_measured_len']) {
+            $inspection1 = MeasureDTL::create(
+                array_merge($measurements, $inspection1, $primary_fields)
+            );
+        }
 
-        $inspection2 = MeasureDTL::create(
-            array_merge($measurements, $inspection2, $primary_fields)
-        );
+        if($inspection2['hose_measured_len']) {
+            $inspection2 = MeasureDTL::create(
+                array_merge($measurements, $inspection2, $primary_fields)
+            );
+        }
 
         return response()->json([
             'action_type' => $action_type,
