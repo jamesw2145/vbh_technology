@@ -263,20 +263,35 @@
         $('#doc_no').focus();
 
         var doc_no = '';
+        var inputValue = '';
+        var isFirstKey = false;
         $('#doc_no').on('focusout', function(){
-            $hiddenProdDate = $('#hidden_prod_date').val();
-            $doc_no = $('#doc_no').val();
-            if(!$hiddenProdDate && $doc_no) {
+            var hiddenProdDate = $('#hidden_prod_date').val();
+            doc_no = $('#doc_no').val();
+            if(!hiddenProdDate && doc_no) {
                 $('#production_date').datepicker('setDate', new Date());
                 $('#hidden_prod_date').val((new Date()).toUTCString());
             }
-            if(!$doc_no)
-                $('#doc_no').val(doc_no);
         });
 
-        $('#doc_no').on('focus', function() {
-            doc_no = $('#doc_no').val();
-            $('#doc_no').val('');
+        $('#mainForm input').on('focusout', function(){
+            if(!$(this).val())
+                $(this).val(inputValue);
+            $(this).off('keydown');
+            $(this).removeClass('text-bold');
+        });
+
+        $('#mainForm input').on('focus', function() {
+            $(this).addClass('text-bold');
+            isFirstKey = true;
+            $(this).on('keydown', function(){
+                if(isFirstKey){
+                    inputValue = $(this).val();
+                    $(this).val('');
+                }
+                
+                isFirstKey = false;
+            });
         });
 
         $('#inspect_similar').on('click', function(){
