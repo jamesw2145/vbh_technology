@@ -41,7 +41,7 @@ class HomeController extends Controller
         $doc_no = $request->input('doc_no');
         $technician = $request->input('technician');
 
-        $measurements = $request->only(['item_id', 'hose_item_id', 'measure_type', 'measure_uom', 'hose_date_code', 'qty_produced']);
+        $measurements = $request->only(['item_id', 'hose_item_id', 'measure_type', 'measure_uom', 'hose_date_code']);
         $qty_produced = $request->input('qty_produced');
 
         $comment = $request->input('comment');
@@ -65,6 +65,7 @@ class HomeController extends Controller
                     'production_date' => Carbon::parse($prod_date),
                     'doc_no' => $doc_no,
                     'technician' => $technician,
+                    'qty_produced' => $qty_produced
                 ], $primary_fields)
             );
 
@@ -80,12 +81,10 @@ class HomeController extends Controller
             );
 
             if($qty_produced) {
-                $mesure_dtls = MeasureDTL::where('entry_id', $entry_id)->get();
-
-                foreach ($mesure_dtls as $key => $value) {
-                    $value->qty_produced = $qty_produced;
-                    $value->save();
-                }
+                $measure_hdr->update([
+                        'qty_produced' => $qty_produced,
+                    ]
+                );
             }            
             
 
