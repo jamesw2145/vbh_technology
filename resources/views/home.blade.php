@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center my-3">
+<div class="container mb-5">
+    <div class="row justify-content-center my-5">
         <div class="col-md-3">
             <img class="img-fluid" src="{{ asset('img/Logo.png') }}" alt="Logo">
         </div>
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="col-md-2 btn-inspect">
-                <button class="btn btn-light border-dark w-100" id="inspect_similar" tabindex="-1">Inspect Similar Part</button>
+                <button class="btn btn-light border-dark" id="inspect_similar" tabindex="-1">Inspect Similar Part</button>
             </div>
         </div>
         <div class="row mb-2">
@@ -111,13 +111,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-9 col-lg-10">
                 <div class="card mb-2">
                     <div class="card-header">Inspection</div>
 
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-4 border-right">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="fitting_1_item_id_1">Fitting #1</label>
                                     <input class="form-control" id="fitting_1_item_id_1" name="inspection[0][fitting_1_item_id]">
@@ -128,9 +128,10 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_1_crimp_len_1">Crimp Length #1</label>
-                                    <input type="number" class="form-control" id="fitting_1_crimp_len_1" name="inspection[0][fitting_1_crimp_len]" step="0.0001" placeholder="0.0000">
+                                    <input type="number" class="form-control" id="fitting_1_crimp_len_1" name="inspection[0][fitting_1_crimp_len]" step="0.0001">
                                 </div>
                             </div>
+                            <div class="divider"></div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="fitting_2_item_id_1">Fitting #2</label>
@@ -142,24 +143,25 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_2_crimp_len_1">Crimp Length #2</label>
-                                    <input type="number" class="form-control" id="fitting_2_crimp_len_1" name="inspection[0][fitting_2_crimp_len]" step="0.0001" placeholder="0.0000">
+                                    <input type="number" class="form-control" id="fitting_2_crimp_len_1" name="inspection[0][fitting_2_crimp_len]" step="0.0001">
                                 </div>
                             </div>
-                            <div class="col-md-4 form-row align-items-center">
-                                <div class="form-group">
+                            <div class="d-md-none d-lg-block col-lg-1"></div>
+                            <div class="col-md-4 col-lg-3 form-row align-items-center">
+                                <div class="form-group w-100">
                                     <label for="hose_measured_len_1">Measured Length</label>
-                                    <input type="number" class="form-control" id="hose_measured_len_1" name="inspection[0][hose_measured_len]" placeholder="0.0000" step="0.0001" required>
+                                    <input type="number" class="form-control mx-auto w-auto" id="hose_measured_len_1" name="inspection[0][hose_measured_len]" placeholder="0.0000" step="0.0001" required>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card mb-2">
+                <div class="card mb-4">
                     <div class="card-header">Inspection</div>
 
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-4 border-right">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="fitting_1_item_id_2">Fitting #1</label>
                                     <input class="form-control" id="fitting_1_item_id_2" name="inspection[1][fitting_1_item_id]">
@@ -170,9 +172,10 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_1_crimp_len_2">Crimp Length #1</label>
-                                    <input type="number" class="form-control" id="fitting_1_crimp_len_2" name="inspection[1][fitting_1_crimp_len]" placeholder="0.0000" step="0.0001">
+                                    <input type="number" class="form-control" id="fitting_1_crimp_len_2" name="inspection[1][fitting_1_crimp_len]" step="0.0001">
                                 </div>
                             </div>
+                            <div class="divider"></div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="fitting_2_item_id_2">Fitting #2</label>
@@ -184,45 +187,48 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_2_crimp_len_2">Crimp Length #2</label>
-                                    <input type="number" class="form-control" id="fitting_2_crimp_len_2" name="inspection[1][fitting_2_crimp_len]" placeholder="0.0000" step="0.0001">
+                                    <input type="number" class="form-control" id="fitting_2_crimp_len_2" name="inspection[1][fitting_2_crimp_len]" step="0.0001">
                                 </div>
                             </div>
-                            <div class="col-md-4 form-row align-items-center">
-                                <div class="form-group">
+                            <div class="d-md-none d-lg-block col-lg-1"></div>
+                            <div class="col-md-4 col-lg-3 form-row align-items-center position-relative">
+                                <div class="form-group measured-len-group">
                                     <label for="hose_measured_len_2">Measured Length</label>
-                                    <input type="number" class="form-control" id="hose_measured_len_2" name="inspection[1][hose_measured_len]" placeholder="0.0000" step="0.0001">
+                                    <input type="number" class="form-control mx-auto w-auto" id="hose_measured_len_2" name="inspection[1][hose_measured_len]" placeholder="0.0000" step="0.0001">
+                                    <button class="btn btn-light border-dark btn-next-measurement" id="next_measurement">Next Measurement</button>
                                 </div>
-                                <button class="btn btn-light border-dark position-absolute btn-next-measurement" id="next_measurement">Next Measurement</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="btn-part-complete">
+                <div class="btn-part-complete pt-1">
                     <button class="btn btn-primary" data-toggle="modal" data-target="#additionalFields" id="part_complete">Part Complete</button>
                     <button class="d-none" id="hidden-btn">Part Complete</button>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-lg-2">
                 <div id="accordion" class="mb-2">
                     <div class="card h-100">
                         <div class="card-header btn-link" data-toggle="collapse" data-target="#conversionCardBody" aria-expanded="true" aria-controls="conversionCardBody">Conversions</div>
 
-                        <div class="card-body px-5 py-2 collapse show" id="conversionCardBody">
-                            <p>1/16 = .0625</p>
-                            <p>1/8 = .125</p>
-                            <p>3/16 = .1875</p>
-                            <p>1/4 = .25</p>
-                            <p>5/16 = .3125</p>
-                            <p>3/8 = .375</p>
-                            <p>7/16 = .4375</p>
-                            <p>1/2 = .5</p>
-                            <p>9/16 = .5625</p>
-                            <p>5/8 = .625</p>
-                            <p>11/16 = .6875</p>
-                            <p>3/4 = .75</p>
-                            <p>13/16 = .8125</p>
-                            <p>7/8 = .875</p>
-                            <p>15/16 = .9375</p>
+                        <div class="card-body py-2 collapse show" id="conversionCardBody">
+                            <div class="wrapper">
+                                <p>1/16 = .0625</p>
+                                <p>1/8 = .125</p>
+                                <p>3/16 = .1875</p>
+                                <p>1/4 = .25</p>
+                                <p>5/16 = .3125</p>
+                                <p>3/8 = .375</p>
+                                <p>7/16 = .4375</p>
+                                <p>1/2 = .5</p>
+                                <p>9/16 = .5625</p>
+                                <p>5/8 = .625</p>
+                                <p>11/16 = .6875</p>
+                                <p>3/4 = .75</p>
+                                <p>13/16 = .8125</p>
+                                <p>7/8 = .875</p>
+                                <p>15/16 = .9375</p>
+                            </div>
                         </div>
                     </div>
                 </div>

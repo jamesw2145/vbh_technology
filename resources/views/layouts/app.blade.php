@@ -16,7 +16,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
         #mainForm {
             font-size: 12px!important;
         }
@@ -29,22 +33,58 @@
             justify-content: center;
             align-items: center;
         }
-        .btn-inspect .btn, .btn-part-complete .btn, .btn-next-measurement{
-            height: 37px;
-            border-radius: 18.5px;
+        .btn-part-complete button {
+            padding: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            width: 125px;
+            height: 30px;
+            border-radius: 20px;
+            border-color: black;
+            background: rgb(1, 113, 188);
+        }
+        .btn-next-measurement {
+            width: 108px;
+            height: 24px;
+            font-family: "Source Sans Pro";
+            font-size: 11px;
+            color: rgb(0, 0, 0);
+            border-radius: 20px;
+            padding: 0;
+            background-color: #e0e0e0;
+        }
+        .btn-inspect .btn{
+            background: rgb(224, 224, 224);
+            width: 132px;
+            height: 26px;
+            line-height: 25px;
+            font-family: "Source Sans Pro";
+            font-size: 12px;
+            color: rgb(0, 0, 0);
+            border-radius: 20px;
+            padding: 0;
         }
         .btn-next-measurement {
             bottom: 0.5rem;
         }
+        #mainForm .card {
+            border: 1px solid black;
+        }
         #mainForm .card-header {
             font-weight: bold;
             text-align: center;
-            padding: 4px 0;
+            padding: 0 10px;
+            background-color: #bdbdbd;
+            line-height: 32px;
             cursor: pointer;
-            font-size: 15px;
+            font-size: 12px;
+            font-family: "Source Sans Pro";
+            color: black;
         }
         #mainForm .card-body {
-            padding: 6px 1.25rem;
+            padding: 16px 1.25rem
         }
         #mainForm .form-group{
             text-align: center;
@@ -57,17 +97,62 @@
 
         #mainForm .form-group input {
             text-align: center;
-            height: 27px;
+            height: 21px;
+            padding: 0;
         }
         #mainForm .form-group select {
             text-align: center;
             text-align-last: center;
             -moz-text-align-last: center;
-            height: 27px;
+            height: 21px;
             padding: 0;
         }
+        #mainForm .form-group input, #mainForm .form-group select {
+            border-color: black;
+            border-radius: 0;
+            font-size: 12px;
+        }
         #accordion .card-body p {
-            margin-bottom: 7px;
+            width: fit-content;
+            margin-bottom: 6px;
+        }
+        #mainForm .divider {
+            width: 1px;
+            background-color: gray;
+            margin: 22px 0 6px;
+        }
+        #hose_measured_len_2 {
+            margin-bottom: 27px;
+        }
+        .measured-len-group {
+            position: absolute;
+            bottom: 0;
+            width: calc(100% - 30px);
+        }
+
+        #conversionCardBody {
+            padding: 20px 0 !important;
+        }
+        #conversionCardBody .wrapper {
+            width: fit-content;
+            margin: auto;
+        }
+
+        @media (max-width: 768px) {
+            .measured-len-group {
+                position: relative;
+                width: calc(100%);
+            }
+
+            .btn-inspect {
+                margin: 30px 0;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .btn-part-complete{
+                margin-bottom: 1.5rem;
+            }
         }
     </style>
 </head>

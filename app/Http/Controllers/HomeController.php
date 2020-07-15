@@ -50,9 +50,7 @@ class HomeController extends Controller
         $inspection2 = $request->input('inspection')[1];
         
         if(!$entry_id) {
-            $id = DB::select("SHOW TABLE STATUS LIKE 'measure_hdr'");
-            $next_id=$id[0]->Auto_increment;
-            $entry_id = $next_id;
+            $entry_id = DB::table('measure_hdr')->max('entry_id')+1;
 
             $primary_fields = [
                 'entry_id' => $entry_id,
