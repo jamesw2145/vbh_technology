@@ -266,19 +266,15 @@
 @section('scripts')
 <script>
     $(document).ready(function(){
+        var hiddenProdDate = $('#hidden_prod_date').val();
+        $('#production_date').datepicker('setDate', new Date());
+        $('#hidden_prod_date').val((new Date()).toUTCString());
+
         $('#doc_no').focus();
 
         var doc_no = '';
         var inputValue = '';
         var isFirstKey = false;
-        $('#doc_no').on('focusout', function(){
-            var hiddenProdDate = $('#hidden_prod_date').val();
-            doc_no = $('#doc_no').val();
-            if(!hiddenProdDate && doc_no) {
-                $('#production_date').datepicker('setDate', new Date());
-                $('#hidden_prod_date').val((new Date()).toUTCString());
-            }
-        });
 
         $('#mainForm input').on('focusout', function(){
             if(!$(this).val())
