@@ -124,11 +124,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_1_crimp_od_1">Crimp OD #1</label>
-                                    <input type="number" class="form-control" id="fitting_1_crimp_od_1" name="inspection[0][fitting_1_crimp_od]" placeholder="0.0000" step="0.0001">
+                                    <input  class="form-control" id="fitting_1_crimp_od_1" name="inspection[0][fitting_1_crimp_od]" placeholder="0.0000" step="0.0001">
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_1_crimp_len_1">Crimp Length #1</label>
-                                    <input type="number" class="form-control" id="fitting_1_crimp_len_1" name="inspection[0][fitting_1_crimp_len]" step="0.0001">
+                                    <input  class="form-control" id="fitting_1_crimp_len_1" name="inspection[0][fitting_1_crimp_len]" step="0.0001">
                                 </div>
                             </div>
                             <div class="divider"></div>
@@ -139,18 +139,18 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_2_crimp_od_1">Crimp OD #2</label>
-                                    <input type="number" class="form-control" id="fitting_2_crimp_od_1" name="inspection[0][fitting_2_crimp_od]" placeholder="0.0000" step="0.0001">
+                                    <input  class="form-control" id="fitting_2_crimp_od_1" name="inspection[0][fitting_2_crimp_od]" placeholder="0.0000" step="0.0001">
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_2_crimp_len_1">Crimp Length #2</label>
-                                    <input type="number" class="form-control" id="fitting_2_crimp_len_1" name="inspection[0][fitting_2_crimp_len]" step="0.0001">
+                                    <input  class="form-control" id="fitting_2_crimp_len_1" name="inspection[0][fitting_2_crimp_len]" step="0.0001">
                                 </div>
                             </div>
                             <div class="d-md-none d-lg-block col-lg-1"></div>
                             <div class="col-md-4 col-lg-3 form-row align-items-center">
                                 <div class="form-group w-100">
                                     <label for="hose_measured_len_1">Measured Length</label>
-                                    <input type="number" class="form-control mx-auto w-auto" id="hose_measured_len_1" name="inspection[0][hose_measured_len]" placeholder="0.0000" step="0.0001" required>
+                                    <input  class="form-control mx-auto w-auto" id="hose_measured_len_1" name="inspection[0][hose_measured_len]" placeholder="0.0000" step="0.0001" required>
                                 </div>
                             </div>
                         </div>
@@ -168,11 +168,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_1_crimp_od_2">Crimp OD #1</label>
-                                    <input type="number" class="form-control" id="fitting_1_crimp_od_2" name="inspection[1][fitting_1_crimp_od]" placeholder="0.0000" step="0.0001">
+                                    <input  class="form-control" id="fitting_1_crimp_od_2" name="inspection[1][fitting_1_crimp_od]" placeholder="0.0000" step="0.0001">
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_1_crimp_len_2">Crimp Length #1</label>
-                                    <input type="number" class="form-control" id="fitting_1_crimp_len_2" name="inspection[1][fitting_1_crimp_len]" step="0.0001">
+                                    <input  class="form-control" id="fitting_1_crimp_len_2" name="inspection[1][fitting_1_crimp_len]" step="0.0001">
                                 </div>
                             </div>
                             <div class="divider"></div>
@@ -183,18 +183,18 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_2_crimp_od_2">Crimp OD #2</label>
-                                    <input type="number" class="form-control" id="fitting_2_crimp_od_2" name="inspection[1][fitting_2_crimp_od]" placeholder="0.0000" step="0.0001">
+                                    <input  class="form-control" id="fitting_2_crimp_od_2" name="inspection[1][fitting_2_crimp_od]" placeholder="0.0000" step="0.0001">
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_2_crimp_len_2">Crimp Length #2</label>
-                                    <input type="number" class="form-control" id="fitting_2_crimp_len_2" name="inspection[1][fitting_2_crimp_len]" step="0.0001">
+                                    <input  class="form-control" id="fitting_2_crimp_len_2" name="inspection[1][fitting_2_crimp_len]" step="0.0001">
                                 </div>
                             </div>
                             <div class="d-md-none d-lg-block col-lg-1"></div>
                             <div class="col-md-4 col-lg-3 form-row align-items-center position-relative">
                                 <div class="form-group measured-len-group">
                                     <label for="hose_measured_len_2">Measured Length</label>
-                                    <input type="number" class="form-control mx-auto w-auto" id="hose_measured_len_2" name="inspection[1][hose_measured_len]" placeholder="0.0000" step="0.0001">
+                                    <input  class="form-control mx-auto w-auto" id="hose_measured_len_2" name="inspection[1][hose_measured_len]" placeholder="0.0000" step="0.0001">
                                     <button class="btn btn-light border-dark btn-next-measurement" id="next_measurement">Next Measurement</button>
                                 </div>
                             </div>
@@ -250,7 +250,7 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <input type="number" class="form-control" id="qty_produced_vi">
+                    <input  class="form-control" id="qty_produced_vi">
                 </div>
             </div>
             <div class="modal-footer">
