@@ -29,7 +29,7 @@
                             <div class="col-md-5">
                                 <div class="form-group">
                                     <label for="doc_no">Prod Order#/PT#</label>
-                                    <input data-length="10" class="form-control" id="doc_no" name="doc_no" required>
+                                    <input maxlength="10" class="form-control" id="doc_no" name="doc_no" required>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -68,13 +68,13 @@
                             <div class="col-md-5">
                                 <div class="form-group">
                                     <label for="item_id">Assembly Part #</label>
-                                    <input data-length="40" class="form-control" id="item_id" name="item_id" required>
+                                    <input maxlength="40" class="form-control" id="item_id" name="item_id" required>
                                 </div>
                             </div>
                             <div class="col-md-5">
                                 <div class="form-group">
                                     <label for="hose_item_id">Hose</label>
-                                    <input data-length="40" class="form-control" id="hose_item_id" name="hose_item_id">
+                                    <input maxlength="40" class="form-control" id="hose_item_id" name="hose_item_id">
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="hose_date_code">Date Code</label>
-                                    <input data-length="15" class="form-control" id="hose_date_code" name="hose_date_code" required>
+                                    <input maxlength="15" class="form-control" id="hose_date_code" name="hose_date_code" required>
                                 </div>
                             </div>
                         </div>
@@ -120,37 +120,37 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="fitting_1_item_id_1">Fitting #1</label>
-                                    <input data-length="40" class="form-control" id="fitting_1_item_id_1" name="inspection[0][fitting_1_item_id]">
+                                    <input maxlength="40" class="form-control" id="fitting_1_item_id_1" name="inspection[0][fitting_1_item_id]">
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_1_crimp_od_1">Crimp OD #1</label>
-                                    <input data-length="10" class="form-control" id="fitting_1_crimp_od_1" name="inspection[0][fitting_1_crimp_od]" placeholder="0.0000" step="0.0001">
+                                    <input maxlength="10" class="form-control" id="fitting_1_crimp_od_1" name="inspection[0][fitting_1_crimp_od]" placeholder="0.0000" step="0.0001">
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_1_crimp_len_1">Crimp Length #1</label>
-                                    <input data-length="10" class="form-control" id="fitting_1_crimp_len_1" name="inspection[0][fitting_1_crimp_len]" step="0.0001">
+                                    <input maxlength="10" class="form-control" id="fitting_1_crimp_len_1" name="inspection[0][fitting_1_crimp_len]" step="0.0001">
                                 </div>
                             </div>
                             <div class="divider"></div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="fitting_2_item_id_1">Fitting #2</label>
-                                    <input data-length="40" class="form-control" id="fitting_2_item_id_1" name="inspection[0][fitting_2_item_id]">
+                                    <input maxlength="40" class="form-control" id="fitting_2_item_id_1" name="inspection[0][fitting_2_item_id]">
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_2_crimp_od_1">Crimp OD #2</label>
-                                    <input data-length="10" class="form-control" id="fitting_2_crimp_od_1" name="inspection[0][fitting_2_crimp_od]" placeholder="0.0000" step="0.0001">
+                                    <input maxlength="10" class="form-control" id="fitting_2_crimp_od_1" name="inspection[0][fitting_2_crimp_od]" placeholder="0.0000" step="0.0001">
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_2_crimp_len_1">Crimp Length #2</label>
-                                    <input data-length="10" class="form-control" id="fitting_2_crimp_len_1" name="inspection[0][fitting_2_crimp_len]" step="0.0001">
+                                    <input maxlength="10" class="form-control" id="fitting_2_crimp_len_1" name="inspection[0][fitting_2_crimp_len]" step="0.0001">
                                 </div>
                             </div>
                             <div class="d-md-none d-lg-block col-lg-1"></div>
                             <div class="col-md-4 col-lg-3 form-row align-items-center">
                                 <div class="form-group w-100">
                                     <label for="hose_measured_len_1">Measured Length</label>
-                                    <input data-length="10" class="form-control mx-auto w-auto" id="hose_measured_len_1" name="inspection[0][hose_measured_len]" placeholder="0.0000" step="0.0001" required>
+                                    <input maxlength="10" class="form-control mx-auto w-auto" id="hose_measured_len_1" name="inspection[0][hose_measured_len]" placeholder="0.0000" step="0.0001" required>
                                 </div>
                             </div>
                         </div>
@@ -164,37 +164,37 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="fitting_1_item_id_2">Fitting #1</label>
-                                    <input data-length="40" class="form-control" id="fitting_1_item_id_2" name="inspection[1][fitting_1_item_id]">
+                                    <input maxlength="40" class="form-control" id="fitting_1_item_id_2" name="inspection[1][fitting_1_item_id]">
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_1_crimp_od_2">Crimp OD #1</label>
-                                    <input data-length="10" class="form-control" id="fitting_1_crimp_od_2" name="inspection[1][fitting_1_crimp_od]" placeholder="0.0000" step="0.0001">
+                                    <input maxlength="10" class="form-control" id="fitting_1_crimp_od_2" name="inspection[1][fitting_1_crimp_od]" placeholder="0.0000" step="0.0001">
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_1_crimp_len_2">Crimp Length #1</label>
-                                    <input data-length="10" class="form-control" id="fitting_1_crimp_len_2" name="inspection[1][fitting_1_crimp_len]" step="0.0001">
+                                    <input maxlength="10" class="form-control" id="fitting_1_crimp_len_2" name="inspection[1][fitting_1_crimp_len]" step="0.0001">
                                 </div>
                             </div>
                             <div class="divider"></div>
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="fitting_2_item_id_2">Fitting #2</label>
-                                    <input data-length="40" class="form-control" id="fitting_2_item_id_2" name="inspection[1][fitting_2_item_id]">
+                                    <input maxlength="40" class="form-control" id="fitting_2_item_id_2" name="inspection[1][fitting_2_item_id]">
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_2_crimp_od_2">Crimp OD #2</label>
-                                    <input data-length="10" class="form-control" id="fitting_2_crimp_od_2" name="inspection[1][fitting_2_crimp_od]" placeholder="0.0000" step="0.0001">
+                                    <input maxlength="10" class="form-control" id="fitting_2_crimp_od_2" name="inspection[1][fitting_2_crimp_od]" placeholder="0.0000" step="0.0001">
                                 </div>
                                 <div class="form-group">
                                     <label for="fitting_2_crimp_len_2">Crimp Length #2</label>
-                                    <input data-length="10" class="form-control" id="fitting_2_crimp_len_2" name="inspection[1][fitting_2_crimp_len]" step="0.0001">
+                                    <input maxlength="10" class="form-control" id="fitting_2_crimp_len_2" name="inspection[1][fitting_2_crimp_len]" step="0.0001">
                                 </div>
                             </div>
                             <div class="d-md-none d-lg-block col-lg-1"></div>
                             <div class="col-md-4 col-lg-3 form-row align-items-center position-relative">
                                 <div class="form-group measured-len-group">
                                     <label for="hose_measured_len_2">Measured Length</label>
-                                    <input data-length="10" class="form-control mx-auto w-auto" id="hose_measured_len_2" name="inspection[1][hose_measured_len]" placeholder="0.0000" step="0.0001">
+                                    <input maxlength="10" class="form-control mx-auto w-auto" id="hose_measured_len_2" name="inspection[1][hose_measured_len]" placeholder="0.0000" step="0.0001">
                                     <button class="btn btn-light border-dark btn-next-measurement" id="next_measurement">Next Measurement</button>
                                 </div>
                             </div>
@@ -234,7 +234,7 @@
                 </div>
                 <div class="form-group">
                     <label for="comment">Comment</label>
-                    <input data-length="40" class="form-control" id="comment" name="comment">
+                    <input maxlength="40" class="form-control" id="comment" name="comment">
                 </div>
             </div>
         </div>
@@ -288,7 +288,7 @@
         $('#mainForm input').on('focus', function() {
             $(this).select();
             isFirstKey = true;
-            length = parseInt($(this).attr('data-length'));
+            // length = parseInt($(this).attr('maxlength'));
             $(this).on('keydown', function(){
                 if(isFirstKey){
                     inputValue = $(this).val();
@@ -297,11 +297,11 @@
                 isFirstKey = false;
             });
               
-            $(this).keypress(function(e) {
-                const strVal = $(this).val();
-                if((length > 0 && strVal.length >= length))
-                    e.preventDefault();
-            });
+            // $(this).keypress(function(e) {
+            //     const strVal = $(this).val();
+            //     if((length > 0 && strVal.length >= length))
+            //         e.preventDefault();
+            // });
         });
 
         $('#doc_no').focus();
