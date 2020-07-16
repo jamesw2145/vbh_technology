@@ -250,7 +250,7 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <input  class="form-control" id="qty_produced_vi">
+                    <input maxlength="6" class="form-control" id="qty_produced_vi">
                 </div>
             </div>
             <div class="modal-footer">
