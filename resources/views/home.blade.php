@@ -71,7 +71,7 @@
                                     <input maxlength="40" class="form-control" id="item_id" name="item_id" required>
                                 </div>
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="hose_item_id">Hose</label>
                                     <input maxlength="40" class="form-control" id="hose_item_id" name="hose_item_id">
@@ -99,7 +99,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="hose_date_code">Date Code</label>
                                     <input maxlength="15" class="form-control" id="hose_date_code" name="hose_date_code" required>
@@ -146,8 +146,7 @@
                                     <input maxlength="10" class="form-control" id="fitting_2_crimp_len_1" name="inspection[0][fitting_2_crimp_len]" step="0.0001">
                                 </div>
                             </div>
-                            <div class="d-md-none d-lg-block col-lg-1"></div>
-                            <div class="col-md-4 col-lg-3 form-row align-items-center">
+                            <div class="col-md-4 form-row align-items-center">
                                 <div class="form-group w-100">
                                     <label for="hose_measured_len_1">Measured Length</label>
                                     <input maxlength="10" class="form-control mx-auto w-auto" id="hose_measured_len_1" name="inspection[0][hose_measured_len]" placeholder="0.000000" step="0.0001" required>
@@ -190,8 +189,7 @@
                                     <input maxlength="10" class="form-control" id="fitting_2_crimp_len_2" name="inspection[1][fitting_2_crimp_len]" step="0.0001">
                                 </div>
                             </div>
-                            <div class="d-md-none d-lg-block col-lg-1"></div>
-                            <div class="col-md-4 col-lg-3 form-row align-items-center position-relative">
+                            <div class="col-md-4 form-row align-items-center position-relative">
                                 <div class="form-group measured-len-group">
                                     <label for="hose_measured_len_2">Measured Length</label>
                                     <input maxlength="10" class="form-control mx-auto w-auto" id="hose_measured_len_2" name="inspection[1][hose_measured_len]" placeholder="0.000000" step="0.0001">
