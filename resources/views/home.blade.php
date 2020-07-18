@@ -276,11 +276,20 @@
         var isFirstKey = false;
         var length = 0;
 
+        $('#mainForm').on('keyup keypress', function(e) {
+            var keyCode = e.keyCode || e.which;
+            if (keyCode === 13) { 
+                e.preventDefault();
+                return false;
+            }
+        });
+
         $('#mainForm input').on('focusout', function(){
             if(!$(this).val())
                 $(this).val(inputValue);
             $(this).off('keydown');
             $(this).off('keypress');
+            inputValue = '';
         });
 
         $('#mainForm input').on('focus', function() {
@@ -394,6 +403,18 @@
                     }
                 },
                 error: function(response) {
+                    $.sweetModal({
+                        content: 'Like web site received an error and your data could be partially saved and then clear out all fields and notify supervisor about issue and re-enter the data.',
+                        title: 'Error',
+                        icon: $.sweetModal.ICON_ERROR,
+
+                        buttons: [
+                            {
+                                label: 'Close',
+                                classes: 'redB'
+                            }
+                        ]
+                    });
                     console.log(response);
                 }
             });

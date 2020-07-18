@@ -58,6 +58,10 @@ class HomeController extends Controller
                 'created_by' => $technician,
             ];
 
+            $request->validate([
+                'qty_produced' => 'numeric|nullable',
+            ]);
+
             MeasureHDR::create(
                 array_merge([
                     'production_date' => Carbon::parse($prod_date),
@@ -79,6 +83,9 @@ class HomeController extends Controller
             );
 
             if($qty_produced) {
+                $request->validate([
+                    'qty_produced' => 'numeric',
+                ]);
                 $measure_hdr->update([
                         'qty_produced' => $qty_produced,
                     ]
@@ -99,12 +106,26 @@ class HomeController extends Controller
         ];
 
         if($inspection1['hose_measured_len']) {
+            $request->validate([
+                'inspection.0.fitting_1_crimp_od' => 'numeric',
+                'inspection.0.fitting_1_crimp_len' => 'numeric',
+                'inspection.0.fitting_2_crimp_od' => 'numeric',
+                'inspection.0.fitting_2_crimp_len' => 'numeric',
+                'inspection.0.hose_measured_len' => 'numeric',
+            ]);
             $inspection1 = MeasureDTL::create(
                 array_merge($measurements, $inspection1, $primary_fields)
             );
         }
 
         if($inspection2['hose_measured_len']) {
+            $request->validate([
+                'inspection.1.fitting_1_crimp_od' => 'numeric',
+                'inspection.1.fitting_1_crimp_len' => 'numeric',
+                'inspection.1.fitting_2_crimp_od' => 'numeric',
+                'inspection.1.fitting_2_crimp_len' => 'numeric',
+                'inspection.1.hose_measured_len' => 'numeric',
+            ]);
             $inspection2 = MeasureDTL::create(
                 array_merge($measurements, $inspection2, $primary_fields)
             );
