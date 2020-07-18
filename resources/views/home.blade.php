@@ -193,14 +193,14 @@
                                 <div class="form-group measured-len-group d-flex flex-column align-items-center">
                                     <label for="hose_measured_len_2">Measured Length</label>
                                     <input maxlength="10" class="form-control" id="hose_measured_len_2" name="inspection[1][hose_measured_len]" placeholder="0.000000" step="0.0001">
-                                    <button class="btn btn-light border-dark btn-next-measurement" id="next_measurement">Next Measurement</button>
+                                    <button class="btn btn-light border-dark btn-next-measurement" id="next_measurement"  tabindex="-1" >Next Measurement</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="btn-part-complete pt-1">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#additionalFields" id="part_complete">Part Complete</button>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#additionalFields" id="part_complete" tabindex="-1">Part Complete</button>
                     <button class="d-none" id="hidden-btn">Part Complete</button>
                 </div>
             </div>
@@ -232,7 +232,7 @@
                 </div>
                 <div class="form-group">
                     <label for="comment">Comment</label>
-                    <input maxlength="40" class="form-control" id="comment" name="comment">
+                    <input maxlength="40" class="form-control" id="comment" name="comment" tabindex="-1">
                 </div>
             </div>
         </div>
