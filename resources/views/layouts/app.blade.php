@@ -40,8 +40,8 @@
             font-weight: bold;
             color: white;
             text-align: center;
-            width: 125px;
-            height: 30px;
+            width: 140px;
+            height: 35px;
             border-radius: 20px;
             border-color: black;
             background: rgb(1, 113, 188);
@@ -160,6 +160,10 @@
             .container {
                 max-width: 960px;
             }
+        }
+
+        .comment-form {
+            width: 200px;
         }
     </style>
 </head>

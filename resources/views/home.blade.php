@@ -155,7 +155,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card mb-4">
+                <div class="card mb-2">
                     <div class="card-header">Inspection</div>
 
                     <div class="card-body">
@@ -199,10 +199,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="btn-part-complete pt-1">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#additionalFields" id="part_complete" tabindex="-1">Part Complete</button>
-                    <button class="d-none" id="hidden-btn">Part Complete</button>
-                </div>
             </div>
             <div class="col-md-3 col-lg-2">
                 <div id="accordion" class="mb-2">
@@ -230,10 +226,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col d-flex justify-content-end">
+                <div class="form-group comment-form">
                     <label for="comment">Comment</label>
                     <input maxlength="40" class="form-control" id="comment" name="comment" tabindex="-1">
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="btn-part-complete pt-1 mx-auto">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#additionalFields" id="part_complete" tabindex="-1">PART COMPLETE</button>
+                <button class="d-none" id="hidden-btn">PART COMPLETE</button>
             </div>
         </div>
     </form>
