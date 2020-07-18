@@ -154,6 +154,12 @@
                 margin-bottom: 1.5rem;
             }
         }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 960px;
+            }
+        }
     </style>
 </head>
 <body>
