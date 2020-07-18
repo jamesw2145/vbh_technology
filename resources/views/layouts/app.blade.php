@@ -165,6 +165,19 @@
         .comment-form {
             width: 200px;
         }
+
+        .qty-modal-submit{
+            padding: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            width: 90px;
+            height: 30px;
+            border-radius: 20px;
+            border-color: black;
+            background: rgb(1, 113, 188);
+        }
     </style>
 </head>
 <body>

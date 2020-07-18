@@ -257,8 +257,8 @@
                     <input maxlength="6" class="form-control" id="qty_produced_vi">
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="btn-qty-modal">Submit</button>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-primary qty-modal-submit" id="btn-qty-modal">SUBMIT</button>
             </div>
             </div>
         </div>
